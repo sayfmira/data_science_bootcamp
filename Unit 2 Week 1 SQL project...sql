@@ -20,24 +20,22 @@ order by 3 desc
 ---TX
 
 --- 3. What state has the most metro areas?
+
 select state, count(distinct metro_city) as numbers_metro_areas
 from public.census_metro_data 
  group by 1
  order by 2 desc 
- 
+
+
  ---CA
- 
- 
- 
+
+
+
 --- 4. Which metro area has the largest proportion of people aged 70-79?
 
- select state, metro_city, max (population)_age_70_79 
+ select state, metro_city, population_age_70_74, population_age_75_79 
  from public.census_metro_data 
- group by 2, 3
+ group by 1, 2,3,4
  order by 3 desc 
- 
- 
- 
- 
 
- 
+ ---AZ Phoenix
